@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: user-service
+
+---
+spring:
+  cloud:
+    config:
+      uri: http://config-service:8080

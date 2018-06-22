@@ -1,0 +1,16 @@
+rootProject.name = 'springcloud-verification'
+
+include 'core-schema'
+include 'user-service'
+include 'order-service'
+include 'catalog-service'
+include 'price-service'
+include 'inventory-service'
+include 'discovery-service'
+include 'config-service'
+include 'hystrix-dashboard-service'
+include 'zipkin-service'
+
+rootProject.children.each{
+    it.name="${it.name}"
+}

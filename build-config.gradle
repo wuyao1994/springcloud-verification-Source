@@ -1,0 +1,84 @@
+ext {
+    rootname="demo"
+    libs = [
+        springboot : [
+                base : [
+                        "org.springframework.boot:spring-boot-starter",
+                        "org.springframework.boot:spring-boot-starter-actuator",
+                        "joda-time:joda-time"
+                ],
+				web : [
+				   "org.springframework.boot:spring-boot-starter-web"
+				],
+				webFlux : [
+					"org.springframework.boot:spring-boot-starter-webflux"
+				],
+                security : [
+                        "org.springframework.boot:spring-boot-starter-security"
+                ]
+        ],
+        springcloud : [
+                "org.springframework.cloud:spring-cloud-starter-netflix-hystrix",
+                "org.springframework.cloud:spring-cloud-starter-config",
+				"org.springframework.cloud:spring-cloud-netflix-hystrix-dashboard",
+                'org.springframework.cloud:spring-cloud-config-server',
+                "org.springframework.cloud:spring-cloud-starter-openfeign",
+                "org.springframework.cloud:spring-cloud-starter-netflix-turbine",
+                "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
+                "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server",
+				"org.springframework.cloud:spring-cloud-starter-sleuth",
+				"org.springframework.cloud:spring-cloud-sleuth-zipkin"
+        ],
+		springcloudstream: [
+				"org.springframework.cloud:spring-cloud-stream",
+				"org.springframework.cloud:spring-cloud-starter-stream-kafka",
+		],
+        springcloudbus: [
+                'org.springframework.cloud:spring-cloud-starter-bus-kafka'
+        ],
+		zipkin      :[
+				"io.zipkin.java:zipkin-server:2.9.2",
+				"io.zipkin.java:zipkin-autoconfigure-ui:2.9.2"
+		],
+        utils 		:[
+				"org.apache.commons:commons-lang3:3.7"
+        ],
+		annotationProcessor			: [
+				"org.projectlombok:lombok"
+		],
+        test       : [
+                base : [
+                        "org.junit.jupiter:junit-jupiter-api",
+                        "org.springframework.boot:spring-boot-starter-test",
+                        "io.projectreactor:reactor-test"
+                ],
+                cloud  : [
+                        "org.springframework.boot:spring-boot-starter-test",
+                        "org.springframework.cloud:spring-cloud-stream-test-support"
+                ],
+                engine  :[
+                        "org.junit.jupiter:junit-jupiter-engine"
+                ]
+        ]
+
+    ]
+}
+
+subprojects {
+	apply plugin: 'java'
+	dependencies {
+		constraints {
+			implementation "mysql:mysql-connector-java:8.0.11"
+			implementation "org.apache.commons:commons-lang3:3.7"
+			implementation "joda-time:joda-time:2.10"
+			implementation "com.google.code.gson:gson:2.8.5"
+			implementation "com.h2database:h2:1.4.197"
+			implementation "com.spotify:docker-maven-plugin:1.1.1"
+			implementation "org.springframework.cloud:spring-cloud-starter-stream-kafka:2.0.0.RELEASE"
+			implementation "org.projectlombok:lombok:1.16.22"
+			implementation "org.junit.jupiter:junit-jupiter-api:5.2.0"
+			implementation "org.springframework.cloud:spring-cloud-stream-test-support:2.0.0.RELEASE"
+			implementation "org.junit.jupiter:junit-jupiter-engine:5.2.0"
+		}
+	}
+}

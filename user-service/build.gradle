@@ -1,0 +1,15 @@
+dependencies {
+    compile project(":core-schema")
+    compile libs.springboot.base
+    compile libs.springcloud
+    compile libs.springcloudbus
+    testCompile libs.test.base
+}
+jar {
+    enabled = true
+}
+bootJar {
+    baseName = 'app'
+    version = '0.1'
+    enabled = true
+}

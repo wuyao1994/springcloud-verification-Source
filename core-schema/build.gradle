@@ -1,0 +1,19 @@
+dependencies {
+	compile libs.springboot.base
+	compile libs.springboot.web
+	compile libs.utils
+	compileOnly libs.annotationProcessor
+	compile libs.springcloud
+	compile libs.springcloudstream
+	
+	testCompile libs.test.base
+	testRuntime libs.test.engine
+}
+
+
+jar {
+	enabled = true
+}
+bootJar {
+	enabled = false
+}

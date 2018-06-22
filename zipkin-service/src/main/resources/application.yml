@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: zipkin-service
+  sleuth:
+    sampler:
+      percentage: 1
+server:
+  port: 9411
+eureka:
+  client:
+    service-url:
+      defaultZone: ${eurekaClientServiceUrlDefaultZone}
+  instance:
+      prefer-ip-address: true

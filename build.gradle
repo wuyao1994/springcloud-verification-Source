@@ -1,0 +1,53 @@
+
+buildscript {
+    repositories {
+      maven { url "https://repo.spring.io/libs-release" }
+      mavenLocal()
+      jcenter()
+    }
+
+}
+plugins {
+    id "org.springframework.boot" version "2.0.2.RELEASE"
+}
+
+allprojects {
+    apply plugin: 'eclipse'
+	apply plugin: 'maven'
+
+    repositories {
+        mavenLocal()
+        jcenter()
+		mavenCentral()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        maven { url "https://repo.spring.io/libs-release" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "http://maven.springframework.org/milestone" }
+        maven { url "http://maven.springframework.org/snapshot" }
+        maven { url "http://repo.spring.io/libs-milestone" }
+    }
+
+}
+apply from: "$rootDir/build-config.gradle"
+subprojects {
+
+    apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+	artifactId=it.name
+
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1'
+        }
+    }
+}
+
