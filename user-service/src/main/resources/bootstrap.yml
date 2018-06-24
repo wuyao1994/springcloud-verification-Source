@@ -6,4 +6,10 @@ spring:
 spring:
   cloud:
     config:
-      uri: http://config-service:8080
+    discovery:
+      label: feature/ACCP-8-spring-streaming-data-integration-with-kafka
+      enabled: true
+      service-id: config-service
+      username: 'elviswu'
+      password: ']wuyao8023'
+      profile: docker
