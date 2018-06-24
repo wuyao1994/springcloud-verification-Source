@@ -1,6 +1,7 @@
 package com.aaxiscommerce.cloud.annotation.client;
 
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import java.lang.annotation.*;
@@ -14,5 +15,6 @@ import java.lang.annotation.*;
 @Inherited
 @SpringCloudApplication
 @EnableFeignClients
+@EnableEurekaClient
 public @interface ACCPApplication {
 }

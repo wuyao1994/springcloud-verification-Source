@@ -2,6 +2,7 @@ package com.aaxiscommerce.cloud.annotation.server;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import java.lang.annotation.*;
 
@@ -14,5 +15,6 @@ import java.lang.annotation.*;
 @Inherited
 @SpringBootApplication
 @EnableConfigServer
+@EnableEurekaClient
 public @interface ACCPConfigServer {
 }
