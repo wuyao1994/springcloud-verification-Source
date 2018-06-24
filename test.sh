@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 # config
-export EUREKA_SERVER_IP=172.17.118.61
-export ZOOKEEPER_IP=172.17.118.61
+export EUREKA_SERVER_IP=192.168.0.114
+export ZOOKEEPER_IP=192.168.0.114
 export EUREKA_SERVER_PORT1=8081
 export EUREKA_SERVER_PORT2=8082
 
@@ -75,6 +75,6 @@ done
 docker-compose up -d kafka
 docker-compose up -d zookeeper
 docker-compose up -d config-service
-docker-compose up -d order-service-1
-docker-compose up -d order-service-2
+#docker-compose up -d order-service-1
+#docker-compose up -d order-service-2
 docker-compose up -d user-service
