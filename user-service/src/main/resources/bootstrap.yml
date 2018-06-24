@@ -6,8 +6,8 @@ spring:
 spring:
   cloud:
     config:
-    discovery:
-      label: feature/ACCP-8-spring-streaming-data-integration-with-kafka
-      enabled: true
-      service-id: config-service
+      discovery:
+        enabled: true
+        service-id: config-service
       profile: docker
+      label: feature/ACCP-8-spring-streaming-data-integration-with-kafka
