@@ -17,7 +17,7 @@ eureka:
     service-url:
       defaultZone: ${eurekaClientServiceUrlDefaultZone}
   instance:
-      prefer-ip-address: true
+      prefer-ip-address: false
 ribbon:
   eager-load:
     enabled: true
