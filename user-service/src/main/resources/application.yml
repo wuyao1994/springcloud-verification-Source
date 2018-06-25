@@ -22,6 +22,7 @@ ribbon:
   eager-load:
     enabled: true
     clients: order-service
+testValue: user-test
 #        output:
 #          destination: hb-users
 #          content-type: application/json
