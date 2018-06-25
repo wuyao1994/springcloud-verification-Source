@@ -13,3 +13,18 @@ ribbon:
   eager-load:
     enabled: true
     clients: order-service
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          zk-nodes: localhost
+      bindings:
+        springCloudBusInput:
+          destination: springCloudBus
+#        output:
+#          destination: hb-users
+#          content-type: application/json
+#        input:
+#          destination: hb-users

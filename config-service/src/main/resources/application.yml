@@ -11,6 +11,11 @@ spring:
           search-paths: config-service/configuration
           username: 'elviswu'
           password: ']wuyao8023'
+    config:
+      server:
+        git:
+          uri: https://github.com/wuyao1994/spring-cloud-event-sourcing-config.git
+          label: dev
 
 server:
   port: 8080
