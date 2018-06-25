@@ -1,6 +1,6 @@
 spring:
   application:
-    name: user-service
+    name: didispace
 #  cloud:
 #    stream:
 #      kafka:
@@ -18,10 +18,10 @@ eureka:
       defaultZone: ${eurekaClientServiceUrlDefaultZone}
   instance:
       prefer-ip-address: false
-ribbon:
-  eager-load:
-    enabled: true
-    clients: order-service
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients: order-service
 #        output:
 #          destination: hb-users
 #          content-type: application/json
