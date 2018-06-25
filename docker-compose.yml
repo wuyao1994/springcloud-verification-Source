@@ -24,6 +24,8 @@ services:
     environment:
      - server.port=8080
      - eurekaClientServiceUrlDefaultZone=http://$EUREKA_SERVER_IP:$EUREKA_SERVER_PORT1/eureka,http://$EUREKA_SERVER_IP:$EUREKA_SERVER_PORT2/eureka,
+     - spring.cloud.stream.kafka.binder.brokers=kafka:9092
+     - spring.cloud.stream.kafka.binder.zkNodes=zookeeper:2181
     ports:
      - "8080:8080"
     restart: always
@@ -94,6 +96,8 @@ services:
     environment:
      - server.port=8085
      - eurekaClientServiceUrlDefaultZone=http://eurekapeer1:$EUREKA_SERVER_PORT1/eureka,http://eurekapeer2:$EUREKA_SERVER_PORT2/eureka,
+     - spring.cloud.stream.kafka.binder.brokers=kafka:9092
+     - spring.cloud.stream.kafka.binder.zkNodes=zookeeper:2181
     extra_hosts:
       eurekapeer1: $EUREKA_SERVER_IP
       eurekapeer2: $EUREKA_SERVER_IP

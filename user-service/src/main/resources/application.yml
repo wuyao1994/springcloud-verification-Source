@@ -1,6 +1,15 @@
 spring:
   application:
     name: user-service
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: localhost
+#          zk-nodes: localhost
+#      bindings:
+#        springCloudBusInput:
+#          destination: springCloudBus
 server:
   port: 8080
 eureka:
@@ -13,16 +22,6 @@ ribbon:
   eager-load:
     enabled: true
     clients: order-service
-spring:
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: localhost
-          zk-nodes: localhost
-      bindings:
-        springCloudBusInput:
-          destination: springCloudBus
 #        output:
 #          destination: hb-users
 #          content-type: application/json
