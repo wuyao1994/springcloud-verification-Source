@@ -2,19 +2,21 @@ spring:
   application:
     name: config-service
   cloud:
-    config:
-      server:
-        git:
-          #replace username and password to yours
-          uri: https://elviswu@stash.aaxisgroup.net/scm/ath/springcloud-verification.git
-          label: feature/ACCP-8-spring-streaming-data-integration-with-kafka
-          search-paths: config-service/configuration
-          username: 'elviswu'
-          password: ']wuyao8023'
+#    config:
+#      server:
+#        git:
+#          #replace username and password to yours
+#          uri: https://elviswu@stash.aaxisgroup.net/scm/ath/springcloud-verification.git
+#          label: feature/ACCP-8-spring-streaming-data-integration-with-kafka
+#          search-paths: config-service/configuration
+#          username: 'elviswu'
+#          password: ']wuyao8023'
     config:
       server:
         git:
           uri: https://github.com/wuyao1994/spring-cloud-event-sourcing-config.git
+          username: 'wuyao1994'
+          password: 'wuyao8023'
           label: dev
 
 server:
