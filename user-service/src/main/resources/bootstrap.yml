@@ -10,6 +10,8 @@ spring:
 #        enabled: true
 #        service-id: config-service
       uri: http://192.168.0.114:8080
+      label: dev
+      profile: docker
 management:
   security:
     enabled: false
