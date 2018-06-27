@@ -1,17 +1,8 @@
 spring:
   application:
-    name: didispace
-#  cloud:
-#    stream:
-#      kafka:
-#        binder:
-#          brokers: localhost
-#          zk-nodes: localhost
-#      bindings:
-#        springCloudBusInput:
-#          destination: springCloudBus
+    name: user-service
 server:
-  port: 8080
+  port: 808
 eureka:
   client:
     service-url:

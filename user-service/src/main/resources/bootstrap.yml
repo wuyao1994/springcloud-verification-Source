@@ -13,7 +13,7 @@ management:
   security:
     enabled: false
 server:
-  port: 8080
+  port: 808
 eureka:
   client:
     service-url:

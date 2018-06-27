@@ -5,6 +5,7 @@ dependencies {
 	compileOnly libs.annotationProcessor
 	compile libs.springcloud
 	compile libs.springcloudstream
+	compile libs.springcloudConfigServer
 	
 	testCompile libs.test.base
 	testRuntime libs.test.engine

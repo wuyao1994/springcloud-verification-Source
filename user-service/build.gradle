@@ -3,6 +3,7 @@ dependencies {
     compile libs.springboot.base
     compile libs.springcloud
     compile libs.springcloudbus
+    compile libs.springcloudConfigClient
     testCompile libs.test.base
 }
 jar {

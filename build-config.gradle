@@ -19,9 +19,7 @@ ext {
         ],
         springcloud : [
                 "org.springframework.cloud:spring-cloud-starter-netflix-hystrix",
-                "org.springframework.cloud:spring-cloud-starter-config",
 				"org.springframework.cloud:spring-cloud-netflix-hystrix-dashboard",
-                'org.springframework.cloud:spring-cloud-config-server',
                 "org.springframework.cloud:spring-cloud-starter-openfeign",
                 "org.springframework.cloud:spring-cloud-starter-netflix-turbine",
                 "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
@@ -36,6 +34,12 @@ ext {
         springcloudbus: [
                 'org.springframework.cloud:spring-cloud-starter-bus-kafka'
         ],
+		springcloudConfigClient: [
+				"org.springframework.cloud:spring-cloud-starter-config"
+		],
+		springcloudConfigServer: [
+				'org.springframework.cloud:spring-cloud-config-server'
+		],
 		zipkin      :[
 				"io.zipkin.java:zipkin-server:2.9.2",
 				"io.zipkin.java:zipkin-autoconfigure-ui:2.9.2"
