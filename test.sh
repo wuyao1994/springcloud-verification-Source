@@ -4,6 +4,7 @@ set -e
 export EUREKA_SERVER_IP=192.168.0.114
 export ZOOKEEPER_IP=192.168.0.114
 export KAFKA_IP=192.168.0.114
+export CONFIG_SERVER_PORT=8080
 export EUREKA_SERVER_PORT1=8081
 export EUREKA_SERVER_PORT2=8082
 
@@ -54,6 +55,8 @@ buildDockerImage springcloud-verification_order-service order-service
 buildDockerImage springcloud-verification_user-service user-service
 sleep 2
 # Start the discovery service next and wait
+docker-compose up -d kafka
+docker-compose up -d zookeeper
 docker-compose up -d discovery-service-1
 docker-compose up -d discovery-service-2
 
@@ -71,11 +74,15 @@ while [ -z ${DISCOVERY_SERVICE_READY} ]; do
   fi
   sleep 2
 done
-
-# Start the other service containers
-docker-compose up -d kafka
-docker-compose up -d zookeeper
 docker-compose up -d config-service
+while [ -z ${CONFIG_SERVICE_READY} ]; do
+  echo "Waiting for config service..."
+  if [ "$(curl --silent $EUREKA_SERVER_IP:$CONFIG_SERVER_PORT/actuator/health 2>&1 | grep -q '\"status\":\"UP\"'; echo $?)" = 0 ]; then
+      CONFIG_SERVICE_READY=true;
+  fi
+  sleep 2
+done
+# Start the other service containers
 #docker-compose up -d order-service-1
 #docker-compose up -d order-service-2
 docker-compose up -d user-service
